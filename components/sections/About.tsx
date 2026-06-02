@@ -10,15 +10,16 @@ export function About() {
     <Section id="about" background="white">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <FadeIn>
-          <div className="relative mx-auto max-w-md lg:max-w-none">
+          <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[400px]">
             <div className="absolute -inset-3 rounded-[2rem] border border-gold/20" />
-            <div className="relative overflow-hidden rounded-[2rem] card-shadow">
+            <div className="relative overflow-hidden rounded-[2rem] bg-beige-light card-shadow">
               <Image
                 src={IMAGES.doctorAlt}
                 alt="د. شيرين منصور مختار في العيادة"
-                width={600}
-                height={700}
-                className="aspect-[6/7] w-full object-cover object-center"
+                width={576}
+                height={1024}
+                sizes="(max-width: 1024px) 90vw, 400px"
+                className="aspect-[9/16] h-auto w-full object-contain object-center"
               />
             </div>
             <div className="absolute -bottom-6 -start-6 rounded-2xl bg-white px-6 py-4 card-shadow">
