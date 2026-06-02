@@ -73,6 +73,11 @@ export function BookingForm() {
 
     if (!form.name.trim()) next.name = "يرجى إدخال الاسم";
     if (!form.phone.trim()) next.phone = "يرجى إدخال رقم الهاتف";
+    if (!form.branch) next.branch = "يرجى اختيار الفرع";
+    if (!form.service) next.service = "يرجى اختيار الخدمة";
+    if (form.service === "أخرى" && !form.serviceOther.trim()) {
+      next.serviceOther = "يرجى تحديد الخدمة";
+    }
 
     setErrors(next);
     return Object.keys(next).length === 0;
@@ -158,14 +163,15 @@ export function BookingForm() {
 
               <div>
                 <label htmlFor="branch" className={labelClass}>
-                  الفرع {optionalLabel}
+                  الفرع <span className="text-gold">*</span>
                 </label>
                 <select
                   id="branch"
                   name="branch"
+                  required
                   value={form.branch}
                   onChange={(e) => update("branch", e.target.value)}
-                  className={inputClass}
+                  className={cn(inputClass, errors.branch && "border-red-400")}
                 >
                   <option value="">اختر الفرع</option>
                   {BOOKING_BRANCHES.map((branch) => (
@@ -174,18 +180,22 @@ export function BookingForm() {
                     </option>
                   ))}
                 </select>
+                {errors.branch && (
+                  <p className="mt-1.5 text-sm text-red-500">{errors.branch}</p>
+                )}
               </div>
 
               <div>
                 <label htmlFor="service" className={labelClass}>
-                  الخدمة {optionalLabel}
+                  الخدمة <span className="text-gold">*</span>
                 </label>
                 <select
                   id="service"
                   name="service"
+                  required
                   value={form.service}
                   onChange={(e) => update("service", e.target.value)}
-                  className={inputClass}
+                  className={cn(inputClass, errors.service && "border-red-400")}
                 >
                   <option value="">اختر الخدمة</option>
                   {BOOKING_SERVICES.map((service) => (
@@ -194,6 +204,9 @@ export function BookingForm() {
                     </option>
                   ))}
                 </select>
+                {errors.service && (
+                  <p className="mt-1.5 text-sm text-red-500">{errors.service}</p>
+                )}
 
                 {form.service === "أخرى" && (
                   <div className="mt-3">
@@ -202,9 +215,17 @@ export function BookingForm() {
                       name="service_other"
                       value={form.serviceOther}
                       onChange={(e) => update("serviceOther", e.target.value)}
-                      className={inputClass}
+                      className={cn(
+                        inputClass,
+                        errors.serviceOther && "border-red-400"
+                      )}
                       placeholder="حددي الخدمة المطلوبة"
                     />
+                    {errors.serviceOther && (
+                      <p className="mt-1.5 text-sm text-red-500">
+                        {errors.serviceOther}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
