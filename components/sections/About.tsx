@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
-import { CREDENTIALS, IMAGES } from "@/lib/constants";
+import { IMAGES } from "@/lib/constants";
+import { useRegion } from "@/components/RegionProvider";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export function About() {
+  const region = useRegion();
+
   return (
     <Section id="about" background="white">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -33,29 +38,19 @@ export function About() {
           <SectionHeading
             eyebrow="عن الدكتورة"
             title="د. شيرين منصور مختار"
-            subtitle="استشارية الجلدية والطب التجميلي والليزر — تجمع بين الخبرة السريرية العميقة والتدريب الدولي المتقدم."
+            subtitle={region.aboutSubtitle}
             align="start"
             className="mb-8"
           />
 
           <div className="space-y-4 text-base leading-relaxed text-muted">
-            <p>
-              تتمتع الدكتورة شيرين منصور مختار بخبرة سريرية تتجاوز 25 عاماً في
-              مجال الجلدية والطب التجميلي وعلاجات الليزر. خريجة جامعة عين شمس
-              المرموقة، وحاصلة على الدبلومة الأمريكية في الطب التجميلي والليزر،
-              وعضو في الجمعية الأمريكية للطب التجميلي والليزر.
-            </p>
-            <p>
-              عملت نائبة استشارية للجلدية والتجميل في الرياض بالمملكة العربية
-              السعودية، حيث اكتسبت خبرة واسعة في التعامل مع احتياجات المرضى
-              بمختلف أنماط البشرة. اليوم، تقود فريق Aspects Clinica في تقديم
-              رعاية تجميلية فاخرة تجمع بين الدقة الطبية واللمسة الجمالية
-              الراقية.
-            </p>
+            {region.aboutParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
 
           <ul className="mt-8 space-y-3">
-            {CREDENTIALS.map((item) => (
+            {region.credentials.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                 <span className="text-sm text-charcoal">{item}</span>

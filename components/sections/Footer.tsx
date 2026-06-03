@@ -1,14 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import {
   NAV_LINKS,
   CLINIC_SERVICES,
-  PHONE_HREF,
-  WHATSAPP_MESSAGE,
   WHATSAPP_LABEL,
   CALL_LABEL,
 } from "@/lib/constants";
+import { useRegion } from "@/components/RegionProvider";
 
 export function Footer() {
+  const region = useRegion();
+
   return (
     <footer className="border-t border-beige bg-beige-light">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -17,12 +20,8 @@ export function Footer() {
             <p className="font-display text-2xl font-bold text-charcoal">
               Aspects Clinica
             </p>
-            <p className="mt-2 text-sm text-muted">
-              د. شيرين منصور مختار
-            </p>
-            <p className="mt-1 text-sm text-muted">
-              استشارية الجلدية والتجميل والليزر
-            </p>
+            <p className="mt-2 text-sm text-muted">د. شيرين منصور مختار</p>
+            <p className="mt-1 text-sm text-muted">{region.titleShort}</p>
           </div>
 
           <div>
@@ -63,7 +62,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href={PHONE_HREF}
+                  href={region.phoneHref}
                   className="text-sm text-muted transition-colors hover:text-gold"
                 >
                   {CALL_LABEL}
@@ -71,7 +70,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={WHATSAPP_MESSAGE}
+                  href={region.whatsappMessage}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted transition-colors hover:text-gold"
@@ -90,9 +89,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Aspects Clinica — د. شيرين منصور
             مختار. جميع الحقوق محفوظة.
           </p>
-          <p className="text-xs text-muted">
-            الرياض · القاهرة
-          </p>
+          <p className="text-xs text-muted">{region.footerLocation}</p>
         </div>
       </div>
     </footer>

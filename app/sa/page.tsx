@@ -2,20 +2,11 @@ import type { Metadata } from "next";
 import { LandingPage } from "@/components/LandingPage";
 import { getRegion } from "@/lib/regions";
 
-const region = getRegion("eg");
+const region = getRegion("sa");
 
 export const metadata: Metadata = {
   title: region.metadata.title,
   description: region.metadata.description,
-  keywords: [
-    "جلدية",
-    "طب تجميلي",
-    "فيلر",
-    "بوتوكس",
-    "Aspects Clinica",
-    "القاهرة الجديدة",
-    "دكتورة شيرين منصور",
-  ],
   openGraph: {
     title: region.metadata.title,
     description: region.metadata.description,
@@ -24,6 +15,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EgyptPage() {
-  return <LandingPage regionId="eg" />;
+export default function SaudiPage() {
+  return <LandingPage regionId="sa" />;
 }

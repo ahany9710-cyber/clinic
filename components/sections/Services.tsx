@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sparkles,
   Syringe,
@@ -5,7 +7,8 @@ import {
   Heart,
   ArrowLeft,
 } from "lucide-react";
-import { SERVICES, WHATSAPP_MESSAGE } from "@/lib/constants";
+import { SERVICES } from "@/lib/constants";
+import { useRegion } from "@/components/RegionProvider";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -23,6 +26,8 @@ const iconMap = {
 } as const;
 
 export function Services() {
+  const region = useRegion();
+
   return (
     <Section id="services" background="white">
       <FadeIn>
@@ -53,7 +58,7 @@ export function Services() {
 
                 <div className="mt-6">
                   <Button
-                    href={WHATSAPP_MESSAGE}
+                    href={region.whatsappMessage}
                     external
                     variant="outline"
                     size="sm"

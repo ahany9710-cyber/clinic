@@ -1,10 +1,15 @@
+"use client";
+
 import { MessageCircle, Phone } from "lucide-react";
-import { PHONE_HREF, WHATSAPP_MESSAGE, WHATSAPP_LABEL, CALL_LABEL } from "@/lib/constants";
+import { WHATSAPP_LABEL, CALL_LABEL } from "@/lib/constants";
+import { useRegion } from "@/components/RegionProvider";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export function FinalCTA() {
+  const region = useRegion();
+
   return (
     <Section id="contact" background="white" className="!py-16 md:!py-20">
       <FadeIn>
@@ -31,7 +36,7 @@ export function FinalCTA() {
                 احجزي استشارتك
               </Button>
               <Button
-                href={WHATSAPP_MESSAGE}
+                href={region.whatsappMessage}
                 external
                 variant="whatsapp"
                 size="lg"
@@ -39,7 +44,12 @@ export function FinalCTA() {
                 <MessageCircle className="h-5 w-5" />
                 {WHATSAPP_LABEL}
               </Button>
-              <Button href={PHONE_HREF} external variant="secondary" size="lg">
+              <Button
+                href={region.phoneHref}
+                external
+                variant="secondary"
+                size="lg"
+              >
                 <Phone className="h-5 w-5" />
                 {CALL_LABEL}
               </Button>

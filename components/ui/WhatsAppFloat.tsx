@@ -1,12 +1,14 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
-import { WHATSAPP_MESSAGE } from "@/lib/constants";
+import { useRegion } from "@/components/RegionProvider";
 
 export function WhatsAppFloat() {
+  const region = useRegion();
+
   return (
     <a
-      href={WHATSAPP_MESSAGE}
+      href={region.whatsappMessage}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="تواصل معنا عبر واتساب"

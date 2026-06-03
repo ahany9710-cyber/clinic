@@ -3,16 +3,14 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { MessageCircle, Phone, Send } from "lucide-react";
 import {
-  BOOKING_BRANCHES,
   BOOKING_SERVICES,
   BOOKING_SOURCES,
   CALL_LABEL,
   FORM_SUBMIT_ACTION,
   FORM_SUBMIT_SUBJECT,
-  PHONE_HREF,
   WHATSAPP_LABEL,
-  WHATSAPP_MESSAGE,
 } from "@/lib/constants";
+import { useRegion } from "@/components/RegionProvider";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -51,6 +49,7 @@ const initialState: FormState = {
 };
 
 export function BookingForm() {
+  const region = useRegion();
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>(
     {}
@@ -59,7 +58,8 @@ export function BookingForm() {
 
   useEffect(() => {
     setThankYouUrl(`${window.location.origin}/thank-you`);
-  }, []);
+    setForm((prev) => ({ ...prev, branch: region.bookingBranchLabel }));
+  }, [region.bookingBranchLabel]);
 
   const update = (field: keyof FormState, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -73,7 +73,6 @@ export function BookingForm() {
 
     if (!form.name.trim()) next.name = "يرجى إدخال الاسم";
     if (!form.phone.trim()) next.phone = "يرجى إدخال رقم الهاتف";
-    if (!form.branch) next.branch = "يرجى اختيار الفرع";
     if (!form.service) next.service = "يرجى اختيار الخدمة";
     if (form.service === "أخرى" && !form.serviceOther.trim()) {
       next.serviceOther = "يرجى تحديد الخدمة";
@@ -165,24 +164,19 @@ export function BookingForm() {
                 <label htmlFor="branch" className={labelClass}>
                   الفرع <span className="text-gold">*</span>
                 </label>
-                <select
+                <input
                   id="branch"
+                  type="text"
+                  readOnly
+                  value={region.bookingBranchLabel}
+                  className={cn(inputClass, "bg-beige-light/50")}
+                />
+                <input
+                  type="hidden"
                   name="branch"
-                  required
-                  value={form.branch}
-                  onChange={(e) => update("branch", e.target.value)}
-                  className={cn(inputClass, errors.branch && "border-red-400")}
-                >
-                  <option value="">اختر الفرع</option>
-                  {BOOKING_BRANCHES.map((branch) => (
-                    <option key={branch.value} value={branch.label}>
-                      {branch.label}
-                    </option>
-                  ))}
-                </select>
-                {errors.branch && (
-                  <p className="mt-1.5 text-sm text-red-500">{errors.branch}</p>
-                )}
+                  value={region.bookingBranchLabel}
+                />
+                <input type="hidden" name="region" value={region.id} />
               </div>
 
               <div>
@@ -293,11 +287,11 @@ export function BookingForm() {
           </form>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href={WHATSAPP_MESSAGE} external variant="whatsapp" size="md">
+            <Button href={region.whatsappMessage} external variant="whatsapp" size="md">
               <MessageCircle className="h-5 w-5" />
               {WHATSAPP_LABEL}
             </Button>
-            <Button href={PHONE_HREF} external variant="outline" size="md">
+            <Button href={region.phoneHref} external variant="outline" size="md">
               <Phone className="h-5 w-5" />
               {CALL_LABEL}
             </Button>
