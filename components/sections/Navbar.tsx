@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
+import { useRegion } from "@/components/RegionProvider";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
+  const region = useRegion();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -38,8 +40,8 @@ export function Navbar() {
         aria-label="التنقل الرئيسي"
       >
         <Link href="#hero" className="group flex flex-col">
-          <span className="font-display text-xl font-bold text-charcoal transition-colors group-hover:text-gold md:text-2xl">
-            Aspects Clinica
+          <span className="font-display text-xl font-bold leading-snug text-charcoal transition-colors group-hover:text-gold md:text-2xl">
+            {region.navbarTitle}
           </span>
           <span className="text-xs text-muted">د. شيرين منصور مختار</span>
         </Link>

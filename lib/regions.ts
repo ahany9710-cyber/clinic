@@ -26,6 +26,7 @@ export interface RegionConfig {
   };
   bookingBranchLabel: string;
   footerLocation: string;
+  navbarTitle: string;
   metadata: {
     title: string;
     description: string;
@@ -76,6 +77,7 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     },
     bookingBranchLabel: "Aspects Clinica — التجمع، القاهرة الجديدة",
     footerLocation: "التجمع، القاهرة الجديدة · مصر",
+    navbarTitle: "Aspects Clinica",
     metadata: {
       title: "د. شيرين منصور مختار | استشارية الجلدية والتجميل والليزر في مصر",
       description:
@@ -120,6 +122,7 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     },
     bookingBranchLabel: "Aspects Clinica — الرياض، السعودية",
     footerLocation: "الرياض · المملكة العربية السعودية",
+    navbarTitle: "الرياض المملكة العربية السعودية",
     metadata: {
       title: "د. شيرين منصور مختار | نائب الجلدية والتجميل والليزر — الرياض",
       description:
