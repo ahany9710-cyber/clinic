@@ -28,7 +28,7 @@ export function About() {
               />
             </div>
             <div className="absolute -bottom-6 -start-6 rounded-2xl bg-white px-6 py-4 card-shadow">
-              <p className="font-display text-3xl font-bold gold-text">+25</p>
+              <p className="font-display text-3xl font-bold gold-text">+30</p>
               <p className="text-sm text-muted">سنة خبرة</p>
             </div>
           </div>

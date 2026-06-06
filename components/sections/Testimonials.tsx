@@ -50,49 +50,44 @@ function TestimonialCard({
 
 function FeaturedRealReview() {
   return (
-    <FadeIn>
-      <article className="relative mx-auto max-w-xl overflow-hidden rounded-3xl border border-gold/20 bg-white card-shadow transition-all duration-300 hover:card-shadow-hover md:max-w-2xl">
-        <div className="flex items-center justify-between gap-3 border-b border-beige bg-beige-light/50 px-5 py-4 md:px-6">
-          <div className="flex items-center gap-2">
-            <BadgeCheck className="h-5 w-5 text-gold" />
-            <span className="text-sm font-semibold text-gold">
-              {FEATURED_REAL_REVIEW.badge}
-            </span>
-          </div>
-          <span className="text-xs text-muted">
-            {FEATURED_REAL_REVIEW.source}
+    <article className="relative mx-auto max-w-xl overflow-hidden rounded-3xl border border-gold/20 bg-white card-shadow transition-all duration-300 hover:card-shadow-hover md:max-w-2xl">
+      <div className="flex items-center justify-between gap-3 border-b border-beige bg-beige-light/50 px-5 py-4 md:px-6">
+        <div className="flex items-center gap-2">
+          <BadgeCheck className="h-5 w-5 text-gold" />
+          <span className="text-sm font-semibold text-gold">
+            {FEATURED_REAL_REVIEW.badge}
           </span>
         </div>
+        <span className="text-xs text-muted">
+          {FEATURED_REAL_REVIEW.source}
+        </span>
+      </div>
 
-        <div className="relative bg-white p-4 md:p-6">
-          <div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border border-beige/80 shadow-inner">
-            <Image
-              src={FEATURED_REAL_REVIEW.image}
-              alt={FEATURED_REAL_REVIEW.alt}
-              width={600}
-              height={800}
-              className="h-auto w-full object-contain"
-            />
-          </div>
+      <div className="relative bg-white p-4 md:p-6">
+        <div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border border-beige/80 shadow-inner">
+          <Image
+            src={FEATURED_REAL_REVIEW.image}
+            alt={FEATURED_REAL_REVIEW.alt}
+            width={600}
+            height={800}
+            className="h-auto w-full object-contain"
+          />
         </div>
+      </div>
 
-        <footer className="flex items-center justify-between gap-3 border-t border-beige px-5 py-4 md:px-6">
-          <div className="flex gap-1">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-            ))}
-          </div>
-          <p className="text-xs text-muted">{FEATURED_REAL_REVIEW.location}</p>
-        </footer>
-      </article>
-    </FadeIn>
+      <footer className="flex items-center justify-between gap-3 border-t border-beige px-5 py-4 md:px-6">
+        <div className="flex gap-1">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+          ))}
+        </div>
+        <p className="text-xs text-muted">{FEATURED_REAL_REVIEW.location}</p>
+      </footer>
+    </article>
   );
 }
 
 export function Testimonials() {
-  const firstHalf = TESTIMONIALS.slice(0, 2);
-  const secondHalf = TESTIMONIALS.slice(2);
-
   return (
     <Section id="testimonials" background="rose">
       <FadeIn>
@@ -154,25 +149,19 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="آراء المرضى"
           title="ثقة بنيناها مع آلاف المرضى"
-          subtitle="تجارب حقيقية من مرضى راضين — نفتخر بكل كلمة ثقة."
+          subtitle="مراجعات حقيقية من Google — تجارب مرضى راضين نفتخر بكل كلمة ثقة فيها."
           className="mb-10 md:mb-12"
         />
       </FadeIn>
 
-      <StaggerContainer className="grid gap-6 md:grid-cols-2">
-        {firstHalf.map((testimonial) => (
-          <StaggerItem key={testimonial.name}>
-            <TestimonialCard testimonial={testimonial} />
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
-
-      <div className="my-8 md:my-10">
-        <FeaturedRealReview />
+      <div className="mb-10 md:mb-12">
+        <FadeIn>
+          <FeaturedRealReview />
+        </FadeIn>
       </div>
 
-      <StaggerContainer className="grid gap-6 md:grid-cols-2">
-        {secondHalf.map((testimonial) => (
+      <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {TESTIMONIALS.map((testimonial) => (
           <StaggerItem key={testimonial.name}>
             <TestimonialCard testimonial={testimonial} />
           </StaggerItem>
