@@ -44,7 +44,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const TRUST_INDICATORS = [
-  { label: "سنوات الخبرة", value: "+30" },
+  { label: "سنوات الخبرة", value: "+25" },
   { label: "دبلومة أمريكية", value: "معتمدة" },
   { label: "خبرة دولية", value: "الرياض" },
   { label: "مرضى راضون", value: "آلاف" },
@@ -83,14 +83,14 @@ export const SERVICES = [
 
 export const WHY_CHOOSE_ITEMS = [
   {
-    highlight: "+30",
+    highlight: "+25",
     title: "سنة خبرة سريرية",
-    description: "منذ تخرجها من كلية الطب بجامعة عين شمس عام 1994",
+    description: "منذ تخرجها من كلية الطب بجامعة عين شمس",
   },
   {
     highlight: "ماجستير",
     title: "جلدية وتناسلية",
-    description: "ماجستير من جامعة عين شمس — 2011 بتقدير جيد جداً",
+    description: "ماجستير من جامعة عين شمس — 2011",
   },
   {
     highlight: "أمريكية",
@@ -99,9 +99,9 @@ export const WHY_CHOOSE_ITEMS = [
       "جامعة عين شمس بالتعاون مع الأكاديمية الأمريكية الدولية",
   },
   {
-    highlight: "المستوى 4",
+    highlight: "المستوى ٢",
     title: "خيوط EPLINE",
-    description: "International Master Course — باريس، فرنسا 2020",
+    description: "International Master Course — جدة، السعودية 2019",
   },
   {
     highlight: "Allergan",
@@ -121,8 +121,8 @@ export const WHY_CHOOSE_ITEMS = [
   },
   {
     highlight: "الرياض",
-    title: "بنان بلاستيك",
-    description: "أخصائية الجلدية والتجميل منذ 2016",
+    title: "نائب جلدية وتجميل",
+    description: "نائبة الجلدية والتجميل منذ 2016",
   },
 ] as const;
 
@@ -130,9 +130,9 @@ export const CREDENTIALS = [
   "ماجستير الجلدية والتناسلية — جامعة عين شمس",
   "دبلومة أمريكية في الطب التجميلي والليزر",
   "شهادة معدات الليزر الطبي وسلامة الليزر — قصر العيني",
-  "المستوى الرابع — خيوط EPLINE — باريس 2020",
+  "المستوى الثاني — خيوط EPLINE — جدة 2019",
   "خبيرة بوتوكس — Allergan Medical Institute",
-  "أكثر من 30 عاماً من الخبرة السريرية",
+  "أكثر من 25 عاماً من الخبرة السريرية",
 ] as const;
 
 export const TESTIMONIALS = [
