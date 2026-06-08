@@ -22,9 +22,45 @@ export const FORM_SUBMIT_ACTION = `https://formsubmit.co/${FORM_SUBMIT_EMAIL}`;
 export const FORM_SUBMIT_SUBJECT = "New Lead From Website";
 
 export const MAPS = {
-  riyadh: "https://maps.google.com/?q=24.753500,46.723900",
+  riyadh: "https://maps.app.goo.gl/NQYowkuSTp2Ks5Wa6?g_st=iwb",
   cairo: "https://maps.app.goo.gl/RkLvQGh6KkrYnQCz9",
 } as const;
+
+export const GOOGLE_REVIEWS = {
+  url: "https://maps.app.goo.gl/NQYowkuSTp2Ks5Wa6?g_st=iwb",
+  title: "آلاف العملاء يثقون بنا على Google",
+  subtitle:
+    "جميع المراجعات المعروضة هنا وآلاف التقييمات الأخرى — مراجعات حقيقية من مرضى راضين على Google Maps.",
+  cta: "شاهدي كل المراجعات على Google",
+} as const;
+
+export const CONFERENCES = [
+  {
+    abbr: "IMCAS",
+    title: "IMCAS World Congress",
+    description: "حضور سنوي منذ 2018",
+  },
+  {
+    abbr: "EADV",
+    title: "European Academy of Dermatology and Venereology",
+    description: "المؤتمر الأوروبي للجلدية والتناسلية — سنوياً",
+  },
+  {
+    abbr: "AAN",
+    title: "American Academy of Neurology & Dermatology",
+    description: "الأكاديمية الأمريكية للأعصاب والجلدية — سنوياً",
+  },
+  {
+    abbr: "AAD",
+    title: "American Academy of Dermatology",
+    description: "الأكاديمية الأمريكية للأمراض الجلدية — سنوياً",
+  },
+  {
+    abbr: "AMWC",
+    title: "AMWC — Monaco",
+    description: "مؤتمر الطب التجميلي العالمي — موناكو",
+  },
+] as const;
 
 export const IMAGES = {
   doctor: "/doctor.png",
@@ -112,7 +148,7 @@ export const WHY_CHOOSE_ITEMS = [
   {
     highlight: "IMCAS",
     title: "مؤتمرات عالمية",
-    description: "IMCAS 2019 باريس + المؤتمر الأوروبي للجلدية مدريد 2019",
+    description: "IMCAS، EADV، AAD، AMWC — ومؤتمرات دولية سنوية منذ 2018",
   },
   {
     highlight: "القاهرة",

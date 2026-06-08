@@ -119,7 +119,7 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
       country: "المملكة العربية السعودية",
       clinic: "Aspects Clinica",
       address: "Aspects Clinica — الرياض",
-      mapUrl: "https://maps.google.com/?q=24.753500,46.723900",
+      mapUrl: "https://maps.app.goo.gl/NQYowkuSTp2Ks5Wa6?g_st=iwb",
     },
     bookingBranchLabel: "Aspects Clinica — الرياض، السعودية",
     footerLocation: "الرياض · المملكة العربية السعودية",

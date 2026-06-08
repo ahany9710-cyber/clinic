@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Star, Quote, BadgeCheck } from "lucide-react";
+import { Star, Quote, BadgeCheck, ExternalLink, MapPin } from "lucide-react";
 import {
   BEFORE_AFTER_RESULTS,
   FEATURED_REAL_REVIEW,
+  GOOGLE_REVIEWS,
   TESTIMONIALS,
 } from "@/lib/constants";
 import { Section } from "@/components/ui/Section";
@@ -13,6 +14,49 @@ import {
   StaggerItem,
 } from "@/components/ui/FadeIn";
 import { cn } from "@/lib/utils";
+
+function GoogleReviewsHighlight() {
+  return (
+    <FadeIn>
+      <a
+        href={GOOGLE_REVIEWS.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative mx-auto mb-10 block max-w-3xl overflow-hidden rounded-3xl border-2 border-gold/40 bg-gradient-to-br from-white via-beige-light/30 to-gold/5 p-6 shadow-[0_0_0_1px_rgba(199,162,83,0.15),0_8px_32px_rgba(199,162,83,0.12)] transition-all duration-300 hover:border-gold hover:shadow-[0_0_0_2px_rgba(199,162,83,0.25),0_12px_40px_rgba(199,162,83,0.2)] md:p-8"
+      >
+        <div className="absolute -end-6 -top-6 h-24 w-24 rounded-full bg-gold/10 blur-2xl transition-all duration-300 group-hover:bg-gold/20" />
+
+        <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex-1">
+            <div className="mb-3 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-gold">
+                <MapPin className="h-3.5 w-3.5" />
+                Google Maps
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-medium text-charcoal shadow-sm">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-gold text-gold" />
+                ))}
+              </span>
+            </div>
+
+            <h3 className="font-display text-xl font-bold text-charcoal md:text-2xl">
+              {GOOGLE_REVIEWS.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted md:text-base">
+              {GOOGLE_REVIEWS.subtitle}
+            </p>
+          </div>
+
+          <div className="flex shrink-0 items-center gap-2 self-start rounded-full bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors group-hover:bg-gold group-hover:text-white sm:self-center">
+            {GOOGLE_REVIEWS.cta}
+            <ExternalLink className="h-4 w-4" />
+          </div>
+        </div>
+      </a>
+    </FadeIn>
+  );
+}
 
 function TestimonialCard({
   testimonial,
@@ -150,9 +194,11 @@ export function Testimonials() {
           eyebrow="آراء المرضى"
           title="ثقة بنيناها مع آلاف المرضى"
           subtitle="مراجعات حقيقية من Google — تجارب مرضى راضين نفتخر بكل كلمة ثقة فيها."
-          className="mb-10 md:mb-12"
+          className="mb-8 md:mb-10"
         />
       </FadeIn>
+
+      <GoogleReviewsHighlight />
 
       <div className="mb-10 md:mb-12">
         <FadeIn>
