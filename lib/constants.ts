@@ -46,11 +46,6 @@ export const CONFERENCES = [
     description: "المؤتمر الأوروبي للجلدية والتناسلية — سنوياً",
   },
   {
-    abbr: "AAN",
-    title: "American Academy of Neurology & Dermatology",
-    description: "الأكاديمية الأمريكية للأعصاب والجلدية — سنوياً",
-  },
-  {
     abbr: "AAD",
     title: "American Academy of Dermatology",
     description: "الأكاديمية الأمريكية للأمراض الجلدية — سنوياً",
