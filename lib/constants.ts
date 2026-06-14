@@ -365,7 +365,7 @@ export const LOCATIONS = [
     city: "الرياض",
     country: "المملكة العربية السعودية",
     clinic: "Aspects Clinica",
-    address: "مركز Aspects Clinica — الرياض",
+    address: "مركز بنان بالرياض",
     mapUrl: MAPS.riyadh,
   },
   {
@@ -393,7 +393,7 @@ export const BOOKING_BRANCHES = [
   },
   {
     value: "riyadh",
-    label: "Aspects Clinica — الرياض، السعودية",
+    label: "مركز بنان بالرياض",
   },
 ] as const;
 

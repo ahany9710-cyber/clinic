@@ -7,6 +7,7 @@ export interface RegionConfig {
   switchLabel: string;
   switchFlag: string;
   phoneE164: string;
+  phonePlaceholder: string;
   phoneHref: string;
   whatsappHref: string;
   whatsappMessage: string;
@@ -50,6 +51,7 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     switchLabel: "السعودية",
     switchFlag: "🇸🇦",
     phoneE164: "201200799993",
+    phonePlaceholder: "01xxxxxxxxx",
     phoneHref: "tel:+201200799993",
     whatsappHref: "https://wa.me/201200799993",
     whatsappMessage: `https://wa.me/201200799993?text=${whatsappText("مصر")}`,
@@ -93,10 +95,11 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     switchHref: "/",
     switchLabel: "مصر",
     switchFlag: "🇪🇬",
-    phoneE164: "966501659014",
-    phoneHref: "tel:+966501659014",
-    whatsappHref: "https://wa.me/966501659014",
-    whatsappMessage: `https://wa.me/966501659014?text=${whatsappText("السعودية")}`,
+    phoneE164: "966509219266",
+    phonePlaceholder: "05xxxxxxxx",
+    phoneHref: "tel:+966509219266",
+    whatsappHref: "https://wa.me/966509219266",
+    whatsappMessage: `https://wa.me/966509219266?text=${whatsappText("السعودية")}`,
     title: "نائب الجلدية والتجميل بالرياض المملكة العربية السعودية",
     titleShort: "نائب الجلدية والتجميل بالرياض المملكة العربية السعودية",
     heroBadge: "نائب الجلدية والتجميل بالرياض المملكة العربية السعودية",
@@ -117,11 +120,11 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     location: {
       city: "الرياض",
       country: "المملكة العربية السعودية",
-      clinic: "Aspects Clinica",
-      address: "Aspects Clinica — الرياض",
+      clinic: "مركز بنان",
+      address: "مركز بنان بالرياض",
       mapUrl: "https://maps.app.goo.gl/NQYowkuSTp2Ks5Wa6?g_st=iwb",
     },
-    bookingBranchLabel: "Aspects Clinica — الرياض، السعودية",
+    bookingBranchLabel: "مركز بنان بالرياض",
     footerLocation: "الرياض · المملكة العربية السعودية",
     navbarTitle: "الرياض المملكة العربية السعودية",
     metadata: {

@@ -16,7 +16,7 @@ export function Locations() {
       <FadeIn>
         <SectionHeading
           eyebrow="موقعنا"
-          title={`Aspects Clinica — ${location.city}`}
+          title={`${location.clinic} — ${location.city}`}
           subtitle="مركز طبي تجميلي متكامل — الجلدية، التجميل، الليزر، التغذية، والجراحة."
         />
       </FadeIn>

@@ -152,7 +152,7 @@ export function BookingForm() {
                     "text-end",
                     errors.phone && "border-red-400"
                   )}
-                  placeholder="01xxxxxxxxx"
+                  placeholder={region.phonePlaceholder}
                   autoComplete="tel"
                 />
                 {errors.phone && (
