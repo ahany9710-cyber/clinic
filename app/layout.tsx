@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { El_Messiri, Tajawal } from "next/font/google";
+import { MetaPixel } from "@/components/analytics/MetaPixel";
 import "./globals.css";
 
 const elMessiri = El_Messiri({
@@ -32,6 +33,7 @@ export default function RootLayout({
       className={`${elMessiri.variable} ${tajawal.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-charcoal font-body">
+        <MetaPixel />
         {children}
       </body>
     </html>
