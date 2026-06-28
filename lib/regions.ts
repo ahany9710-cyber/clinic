@@ -1,3 +1,5 @@
+import { PHONE_E164, PHONE_HREF, WHATSAPP_HREF } from "./constants";
+
 export type RegionId = "eg" | "sa";
 
 export interface RegionConfig {
@@ -40,6 +42,12 @@ const whatsappText = (regionLabel: string) =>
     `مرحباً، أود حجز استشارة مع الدكتورة شيرين منصور مختار في Aspects Clinica — ${regionLabel}.`
   );
 
+const sharedContact = {
+  phoneE164: PHONE_E164,
+  phoneHref: PHONE_HREF,
+  whatsappHref: WHATSAPP_HREF,
+};
+
 const HERO_SUBTITLE =
   "أكثر من 25 عاماً من الخبرة في الجلدية والطب التجميلي والليزر في الرياض بالمملكة العربية السعودية، و Aspects Clinica بمصر. نقدّم لكِ رعاية طبية فاخرة ونتائج طبيعية بثقة عالمية.";
 
@@ -50,11 +58,9 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     switchHref: "/sa",
     switchLabel: "السعودية",
     switchFlag: "🇸🇦",
-    phoneE164: "201200799993",
+    ...sharedContact,
     phonePlaceholder: "01xxxxxxxxx",
-    phoneHref: "tel:+201200799993",
-    whatsappHref: "https://wa.me/201200799993",
-    whatsappMessage: `https://wa.me/201200799993?text=${whatsappText("مصر")}`,
+    whatsappMessage: `${WHATSAPP_HREF}?text=${whatsappText("مصر")}`,
     title: "استشارية الجلدية والتجميل والليزر في مصر",
     titleShort: "استشارية الجلدية والتجميل والليزر في مصر",
     heroBadge: "استشارية الجلدية والتجميل والليزر في مصر",
@@ -95,11 +101,9 @@ export const REGIONS: Record<RegionId, RegionConfig> = {
     switchHref: "/",
     switchLabel: "مصر",
     switchFlag: "🇪🇬",
-    phoneE164: "966509219266",
+    ...sharedContact,
     phonePlaceholder: "05xxxxxxxx",
-    phoneHref: "tel:+966509219266",
-    whatsappHref: "https://wa.me/966509219266",
-    whatsappMessage: `https://wa.me/966509219266?text=${whatsappText("السعودية")}`,
+    whatsappMessage: `${WHATSAPP_HREF}?text=${whatsappText("السعودية")}`,
     title: "نائب الجلدية والتجميل بالرياض المملكة العربية السعودية",
     titleShort: "نائب الجلدية والتجميل بالرياض المملكة العربية السعودية",
     heroBadge: "نائب الجلدية والتجميل بالرياض المملكة العربية السعودية",
