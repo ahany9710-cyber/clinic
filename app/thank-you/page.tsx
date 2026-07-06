@@ -27,7 +27,7 @@ export default function ThankYouPage() {
 
           <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
             {mounted
-              ? "تم استلام طلب الحجز بنجاح. سيتواصل معكِ فريق Aspects Clinica في أقرب وقت لتأكيد موعدك."
+              ? "تم استلام طلب الحجز بنجاح. سيتواصل معكِ فريقنا في أقرب وقت لتأكيد موعدك."
               : "..."}
           </p>
 

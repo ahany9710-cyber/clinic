@@ -16,9 +16,9 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "د. شيرين منصور مختار | Aspects Clinica",
+  title: "د. شيرين منصور مختار | الجلدية والطب التجميلي",
   description:
-    "الجلدية والطب التجميلي والليزر — Aspects Clinica في مصر والسعودية.",
+    "الجلدية والطب التجميلي والليزر — د. شيرين منصور مختار في مصر والسعودية.",
 };
 
 export default function RootLayout({

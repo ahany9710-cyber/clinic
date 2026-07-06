@@ -10,7 +10,7 @@ export const WHATSAPP_HREF = `https://wa.me/${PHONE_E164}`;
 export const WHATSAPP_MESSAGE =
   `${WHATSAPP_HREF}?text=` +
   encodeURIComponent(
-    "مرحباً، أود حجز استشارة مع الدكتورة شيرين منصور مختار في Aspects Clinica."
+    "مرحباً، أود حجز استشارة مع الدكتورة شيرين منصور مختار."
   );
 
 export const WHATSAPP_LABEL = "واتساب";
@@ -147,7 +147,7 @@ export const WHY_CHOOSE_ITEMS = [
   },
   {
     highlight: "القاهرة",
-    title: "Aspects Clinica",
+    title: "استشارية الجلدية",
     description: "استشارية الجلدية التجميل والليزر منذ 2019",
   },
   {
@@ -364,15 +364,15 @@ export const LOCATIONS = [
   {
     city: "الرياض",
     country: "المملكة العربية السعودية",
-    clinic: "Aspects Clinica",
+    clinic: "مركز بنان",
     address: "مركز بنان بالرياض",
     mapUrl: MAPS.riyadh,
   },
   {
     city: "القاهرة",
     country: "جمهورية مصر العربية",
-    clinic: "Aspects Clinica",
-    address: "مركز Aspects Clinica — القاهرة",
+    clinic: "التجمع، القاهرة الجديدة",
+    address: "التجمع، القاهرة الجديدة",
     mapUrl: MAPS.cairo,
   },
 ] as const;
@@ -389,7 +389,7 @@ export const CLINIC_SERVICES = [
 export const BOOKING_BRANCHES = [
   {
     value: "cairo",
-    label: "Aspects Clinica — التجمع، القاهرة الجديدة",
+    label: "التجمع، القاهرة الجديدة",
   },
   {
     value: "riyadh",
@@ -432,7 +432,7 @@ export function buildBookingWhatsAppUrl(data: {
   notes?: string;
 }) {
   const lines = [
-    "مرحباً، أود حجز استشارة في Aspects Clinica.",
+    "مرحباً، أود حجز استشارة مع الدكتورة شيرين منصور مختار.",
     "",
     `الاسم: ${data.name}`,
     `الهاتف: ${data.phone}`,

@@ -28,7 +28,7 @@ export function FinalCTA() {
 
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
               احجزي استشارتك مع د. شيرين منصور مختار — واكتشفي خطة علاجية
-              مصممة خصيصاً لكِ في Aspects Clinica.
+              مصممة خصيصاً لكِ.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

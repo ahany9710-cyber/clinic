@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     "طب تجميلي",
     "فيلر",
     "بوتوكس",
-    "Aspects Clinica",
     "القاهرة الجديدة",
     "دكتورة شيرين منصور",
   ],

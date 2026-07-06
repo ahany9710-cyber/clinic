@@ -18,7 +18,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <p className="font-display text-2xl font-bold text-charcoal">
-              Aspects Clinica
+              د. شيرين منصور مختار
             </p>
             <p className="mt-2 text-sm text-muted">د. شيرين منصور مختار</p>
             <p className="mt-1 text-sm text-muted">{region.titleShort}</p>
@@ -86,8 +86,8 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-start">
           <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} Aspects Clinica — د. شيرين منصور
-            مختار. جميع الحقوق محفوظة.
+            &copy; {new Date().getFullYear()} د. شيرين منصور مختار. جميع
+            الحقوق محفوظة.
           </p>
           <p className="text-xs text-muted">{region.footerLocation}</p>
         </div>
